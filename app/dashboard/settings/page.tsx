@@ -90,7 +90,7 @@ const SettingsPage = () => {
                                     <div>
                                         <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100 tracking-tight">{user?.name || "Jeremiah Okoja"}</h2>
                                         <p className="text-base text-gray-500 dark:text-slate-400 font-medium">
-                                            {user?.role || "Admin"} • <span className="text-gray-400 dark:text-slate-500">{user?.email || "jeremiah@gmail.com"}</span>
+                                           Operation • <span className="text-gray-400 dark:text-slate-500">{user?.email || "jeremiah@gmail.com"}</span>
                                         </p>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@ const SettingsPage = () => {
                                         <DetailItem label="Name" value={user?.name || "Jeremiah Okoja"} />
                                         <DetailItem label="Email" value={user?.email || "jeremiah@gmail.com"} />
                                         <DetailItem label="Phone" value="08011223868" />
-                                        <DetailItem label="Role" value={user?.role || "Admin"} />
+                                        <DetailItem label="Role" value="" />
                                         <DetailItem label="Department" value="HR" />
                                         <DetailItem label="Last Login" value="Today, 9:40 AM" />
                                     </div>
