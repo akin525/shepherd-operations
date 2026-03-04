@@ -13,6 +13,7 @@ import {
     ClipboardList,
     BarChart3,
     LayoutGrid,
+    LucideColumnsSettings,
     ChevronRight
 } from "lucide-react";
 import AddNewService from "./AddNewService";
@@ -95,6 +96,12 @@ const Sidebar = () => {
             name: "SOP Generator",
             path: "/dashboard/sop-generator",
             icon: LayoutGrid,
+            hasSubmenu: false
+        },
+        {
+            name: "Settings",
+            path: "/dashboard/settings",
+            icon: LucideColumnsSettings, // <--- Changed from LayoutGrid
             hasSubmenu: false
         },
     ];
