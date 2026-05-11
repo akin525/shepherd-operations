@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shepherd Hill Client",
-  description: "Client dashboard",
+  title: "Shepherd Hill Operations",
+  description: "Operations dashboard",
 };
 
 export default function RootLayout({
