@@ -11,10 +11,9 @@ import {
     Users,
     MessageSquareWarning,
     ClipboardList,
-    BarChart3,
     LayoutGrid,
     LucideColumnsSettings,
-    ChevronRight, GraduationCap
+    ChevronRight, GraduationCap, ShieldCheck
 } from "lucide-react";
 import AddNewService from "./AddNewService";
 import {
@@ -85,6 +84,12 @@ const Sidebar = () => {
             path: "/dashboard/patrol-updates",
             icon: ClipboardList,
             hasSubmenu: true
+        },
+        {
+            name: "Supervisor Assignment",
+            path: "/dashboard/supervisor-assignment",
+            icon: ShieldCheck,
+            hasSubmenu: false
         },
         // {
         //     name: "Manning Structure",
