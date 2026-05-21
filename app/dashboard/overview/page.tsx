@@ -5,16 +5,6 @@ import { useAuth } from "@/context/AuthContext";
 import Headercontent from "@/components/Headercontent";
 import DateTimeDisplay from "@/components/DateTime";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import {
   BarChart,
   Bar,
@@ -227,95 +217,6 @@ const Overview = () => {
           </Card>
         </div>
 
-        {/* 4. Bottom Section: Assigned Locations Summary */}
-        <Card className="border-none shadow-sm">
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-lg font-bold border-b-2 border-[#FAB435] inline-block pb-1">
-              Assigned Locations Summary
-            </CardTitle>
-            <Button variant="ghost" className="text-[#FAB435] hover:text-[#d99820] hover:bg-orange-50 bg-[#FAB435]/10">
-              See All
-            </Button>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-gray-50 dark:bg-gray-900 border-none hover:bg-transparent">
-                  <TableHead className="font-semibold">Client Name</TableHead>
-                  <TableHead className="font-semibold">Location</TableHead>
-                  <TableHead className="font-semibold">Guards Assigned</TableHead>
-                  <TableHead className="font-semibold">Shift</TableHead>
-                  <TableHead className="font-semibold">Status</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {[
-                  { client: "Zenith Bank HQ", loc: "Victoria Island", guards: "12 Guards", shift: "Day/Night" },
-                  { client: "Dangote Depot", loc: "Apapa", guards: "17 Guards", shift: "Day/Night" },
-                  { client: "Zenith Bank HQ", loc: "Victoria Island", guards: "10 Guards", shift: "Day/Night" },
-                  { client: "Zenith Bank HQ", loc: "Victoria Island", guards: "19 Guards", shift: "Day/Night" },
-                ].map((row, idx) => (
-                    <TableRow key={idx} className="border-b border-gray-100 hover:bg-transparent">
-                      <TableCell className="font-bold text-[#3A3A3A] dark:text-gray-200">{row.client}</TableCell>
-                      <TableCell className="text-gray-500">{row.loc}</TableCell>
-                      <TableCell className="text-gray-500">{row.guards}</TableCell>
-                      <TableCell className="text-gray-500">{row.shift}</TableCell>
-                      <TableCell>
-                        <div className="flex items-center gap-2">
-                          <span className="h-2 w-2 rounded-full bg-green-500" />
-                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Active</span>
-                        </div>
-                      </TableCell>
-                    </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
-
-        {/* 5. NEW Section: Incident Summary (Added based on screenshot) */}
-        <Card className="border-none shadow-sm">
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-lg font-bold border-b-2 border-[#FAB435] inline-block pb-1">
-              Incident Summary
-            </CardTitle>
-            <Button variant="ghost" className="text-[#FAB435] hover:text-[#d99820] hover:bg-orange-50 bg-[#FAB435]/10">
-              See All
-            </Button>
-          </CardHeader>
-          <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-gray-50 dark:bg-gray-900 border-none hover:bg-transparent">
-                  <TableHead className="font-semibold">Site</TableHead>
-                  <TableHead className="font-semibold">Incident Type</TableHead>
-                  <TableHead className="font-semibold">Time</TableHead>
-                  <TableHead className="font-semibold">Status</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {/* Mock Data to match screenshot. You can later replace this by filtering `data?.recent_activities` */}
-                {[
-                  { site: "Dangote Depot", type: "Unauthorized Entry", time: "09:32 AM", status: "Under Review" },
-                  { site: "Zenith Bank", type: "Equipment Damage", time: "11:10 AM", status: "Resolved" },
-                ].map((row, idx) => (
-                    <TableRow key={idx} className="border-b border-gray-100 hover:bg-transparent">
-                      <TableCell className="font-bold text-[#3A3A3A] dark:text-gray-200">{row.site}</TableCell>
-                      <TableCell className="text-gray-500">{row.type}</TableCell>
-                      <TableCell className="text-gray-500">{row.time}</TableCell>
-                      <TableCell>
-                        <span className={`text-sm font-medium ${
-                            row.status === "Resolved" ? "text-green-600" : "text-gray-700 dark:text-gray-300"
-                        }`}>
-                          {row.status}
-                        </span>
-                      </TableCell>
-                    </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </CardContent>
-        </Card>
       </div>
   );
 };
